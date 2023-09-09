@@ -1,0 +1,40 @@
+class Question: 
+     def __init__(self, prompt, answer): 
+         self.prompt = prompt 
+         self.answer = answer 
+  
+ # Define your list of questions 
+ questions = [ 
+     Question("What is the capital of France?\n(a) London\n(b) Madrid\n(c) Paris\n", "c"), 
+     Question("Which planet is known as the 'Red Planet'?\n(a) Earth\n(b) Mars\n(c) Venus\n", "b"), 
+     Question("What is the largest mammal in the world?\n(a) Elephant\n(b) Blue Whale\n(c) Giraffe\n", "b"), 
+     Question("What is the largest planet in our solar system?\n(a) Earth\n(b) Venus\n(c) Jupiter\n", "c"), 
+     Question("Which gas do plants absorb from the atmosphere during photosynthesis?\n(a) Nitrogen\n(b) Oxygen\n(c) Carbon Dioxide\n", "c"), 
+     Question("How many continents are there on Earth?\n(a) 4\n(b) 6\n(c) 7\n", "c"), 
+     Question("Who wrote the play 'Romeo and Juliet'?\n(a) Charles Dickens\n(b) William Shakespeare\n(c) Jane Austen\n", "b"), 
+     Question("What is the largest desert in the world?\n(a) Sahara Desert\n(b) Gobi Desert\n(c) Arabian Desert\n", "a"), 
+     Question("What is the chemical symbol for gold?\n(a) Go\n(b) Au\n(c) Ag\n", "b"), 
+     Question("In which year did Christopher Columbus reach the Americas?\n(a) 1492\n(b) 1507\n(c) 1511\n", "a"), 
+ ] 
+  
+ def run_quiz(questions): 
+     score = 0 
+     for question in questions: 
+         answer = input(question.prompt).strip().lower() 
+         if answer == question.answer: 
+             print("Correct!\n") 
+             score += 1 
+         else: 
+             print(f"Wrong. The correct answer was {question.answer}.\n") 
+  
+     print(f"You got {score}/{len(questions)} questions correct.") 
+     play_again = input("Do you want to play again? (yes/no): ").strip().lower() 
+     if play_again == "yes": 
+         run_quiz(questions) 
+     else: 
+         print("Thank you for playing!") 
+  
+ if __name__ == "__main__": 
+     print("Welcome to the Quiz Game!\n") 
+     run_quiz(questions)
+s
